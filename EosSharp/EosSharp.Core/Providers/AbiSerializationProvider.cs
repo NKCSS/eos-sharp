@@ -449,7 +449,7 @@ namespace EosSharp.Core.Providers
 
         private static void WriteName(MemoryStream ms, object value)
         {
-            var a = SerializationHelper.ConvertNameToBytes((string)value);
+            var a = SerializationHelper.ConvertNameToBytes(value?.ToString());
             ms.Write(a, 0, 8);
         }
 
