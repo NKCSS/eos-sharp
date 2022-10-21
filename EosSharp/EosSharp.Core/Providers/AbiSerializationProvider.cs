@@ -515,7 +515,7 @@ namespace EosSharp.Core.Providers
         private static void WriteSymbolString(MemoryStream ms, object value)
         {
             Regex r = new Regex("^([0-9]+),([A-Z]+)$", RegexOptions.IgnoreCase);
-            Match m = r.Match((string)value);
+            Match m = r.Match(value?.ToString());
 
             if (!m.Success)
                 throw new Exception("Invalid symbol.");
