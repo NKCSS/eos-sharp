@@ -455,7 +455,7 @@ namespace EosSharp.Core.Providers
 
         private static void WriteAsset(MemoryStream ms, object value)
         {
-            var s = ((string)value).Trim();
+            var s = value?.ToString()?.Trim() ?? string.Empty;
             Int32 pos = 0;
             string amount = "";
             byte precision = 0;
