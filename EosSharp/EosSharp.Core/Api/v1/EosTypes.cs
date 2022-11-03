@@ -788,7 +788,7 @@ namespace EosSharp.Core.Api.v1
 		public string upper_bound = "-1";
 		public Int32 limit = 10;
 		public string key_type;
-		public string index_position;
+		public uint? index_position;
 		public string encode_type = "dec";
 		public bool reverse;
 		public bool show_payer;
