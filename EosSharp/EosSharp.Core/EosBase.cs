@@ -1,4 +1,5 @@
-﻿using EosSharp.Core;
+﻿using Abi2CSharp.Model.eosio;
+using EosSharp.Core;
 using EosSharp.Core.Api.v1;
 using EosSharp.Core.Helpers;
 using EosSharp.Core.Interfaces;
@@ -289,7 +290,7 @@ namespace EosSharp.Core
         /// <param name="account">account name to check</param>
         /// <param name="symbol">token symbol (optional)</param>
         /// <returns>token balances</returns>
-        public async Task<List<string>> GetCurrencyBalance(string code, string account, string symbol)
+        public async Task<List<Asset>> GetCurrencyBalance(string code, string account, string symbol)
         {
             return (await Api.GetCurrencyBalance(new GetCurrencyBalanceRequest()
             {

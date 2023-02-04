@@ -1,8 +1,9 @@
-﻿  
+﻿
 
-  
+
 
 // Auto Generated, do not edit.
+using Abi2CSharp.Model.eosio;
 using EosSharp.Core.DataAttributes;
 using System;
 using System.Collections.Generic;
@@ -808,6 +809,7 @@ namespace EosSharp.Core.Api.v1
 		public List<TRowType> rows;
    
 		public bool more;
+		public string next_key;
     }
 	[Serializable]
     public class GetTableByScopeRequest
@@ -838,7 +840,7 @@ namespace EosSharp.Core.Api.v1
     public class GetCurrencyBalanceResponse
     {
  
-		public List<string> assets;
+		public List<Asset> assets;
     }
 	[Serializable]
     public class GetCurrencyStatsRequest

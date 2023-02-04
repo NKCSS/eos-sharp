@@ -1,8 +1,9 @@
-﻿  
+﻿
 
-  
+
 
 // Auto Generated, do not edit.
+using Abi2CSharp.Model.eosio;
 using EosSharp.Core;
 using EosSharp.Core.Api.v1;
 using EosSharp.Core.Interfaces;
@@ -104,7 +105,7 @@ namespace EosSharp.Core.Api.v1
 		public async Task<GetCurrencyBalanceResponse> GetCurrencyBalance(GetCurrencyBalanceRequest data)
         {
             var url = string.Format("{0}/v1/chain/get_currency_balance", Config.HttpEndpoint);
-			return new GetCurrencyBalanceResponse() { assets = await HttpHandler.PostJsonAsync<List<string>>(url, data) };
+			return new GetCurrencyBalanceResponse() { assets = await HttpHandler.PostJsonAsync<List<Asset>>(url, data) };
         }
 		public async Task<GetCurrencyStatsResponse> GetCurrencyStats(GetCurrencyStatsRequest data)
         {
