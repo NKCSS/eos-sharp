@@ -694,10 +694,12 @@ namespace EosSharp.Core.Providers
             {
                 var items = (ICollection)value;
                 var arrayType = uwtype.Substring(0, uwtype.Length - 2);
-
-                WriteVarUint32(ms, items.Count);
-                foreach (var item in items)
-                    WriteAbiType(ms, item, arrayType, abi, false);
+                // make sure unspecified (NULL) values don't throw errors
+                int itemCount = items?.Count ?? 0;
+                WriteVarUint32(ms, itemCount);
+                if (itemCount > 0)
+                    foreach (var item in items)
+                        WriteAbiType(ms, item, arrayType, abi, false);
 
                 return;
             }
